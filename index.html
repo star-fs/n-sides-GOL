@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Life - Multitiling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <aside id="controls">
+            <h1>Game of Life</h1>
+            
+            <section class="control-group">
+                <h3>Simulation</h3>
+                <div class="button-row">
+                    <button id="btn-play">Play</button>
+                    <button id="btn-pause" disabled>Pause</button>
+                    <button id="btn-step">Step</button>
+                </div>
+                <div class="button-row">
+                    <button id="btn-clear">Clear</button>
+                    <button id="btn-reset">Reset</button>
+                    <button id="btn-random">Random</button>
+                </div>
+            </section>
+
+            <section class="control-group">
+                <h3>Controls</h3>
+                <ul class="control-list">
+                    <li><strong>Left Click:</strong> Draw Cells</li>
+                    <li><strong>Right Click:</strong> Pan View</li>
+                    <li><strong>Shift + Left:</strong> Pan View</li>
+                    <li><strong>Scroll:</strong> Zoom In/Out</li>
+                </ul>
+            </section>
+
+            <section class="control-group">
+                <h3>Presets</h3>
+                <div class="button-row">
+                    <select id="select-preset">
+                        <option value="">Select a Preset...</option>
+                        <optgroup label="Spaceships">
+                            <option value="glider">Glider / Small</option>
+                            <option value="spaceship_med">Medium Spaceship</option>
+                        </optgroup>
+                        <optgroup label="Oscillators">
+                            <option value="pulsar">Pulsar / Large</option>
+                            <option value="osc_small">Blinker / Toad</option>
+                            <option value="penta_decathlon">Penta-decathlon</option>
+                        </optgroup>
+                        <optgroup label="Guns & Growth">
+                            <option value="glider_gun">Gosper Glider Gun</option>
+                            <option value="infinite">Infinite Growth</option>
+                        </optgroup>
+                    </select>
+                    <button id="btn-load-preset">Load</button>
+                </div>
+            </section>
+
+            <section class="control-group">
+                <h3>Grid Config</h3>
+                <label>
+                    Tiling:
+                    <select id="select-tiling">
+                        <option value="square">Square (8-neigh)</option>
+                        <option value="hex">Hexagonal (6-neigh)</option>
+                        <option value="tri">Triangle (3-neigh)</option>
+                        <option value="diamond">Diamond (4-neigh)</option>
+                        <option value="hat">Hat (Aperiodic)</option>
+                    </select>
+                </label>
+                <label>
+                    Width: <input type="number" id="input-width" value="75" min="5" max="200">
+                </label>
+                <label>
+                    Height: <input type="number" id="input-height" value="75" min="5" max="200">
+                </label>
+            </section>
+
+            <section class="control-group">
+                <h3>Rules (B/S)</h3>
+                <label>
+                    Birth: <input type="text" id="input-birth" value="3">
+                </label>
+                <label>
+                    Survival: <input type="text" id="input-survival" value="23">
+                </label>
+            </section>
+
+            <section class="control-group">
+                <h3>Speed & View</h3>
+                <label>
+                    Tick (ms): <input type="range" id="input-speed" min="10" max="1000" value="100">
+                    <span id="speed-value">100ms</span>
+                </label>
+                <label>
+                    Density: <input type="range" id="input-density" min="0" max="1" step="0.01" value="0.2">
+                </label>
+            </section>
+
+            <div class="stats">
+                Generation: <span id="stat-gen">0</span>
+            </div>
+
+            <footer class="app-footer">
+                &copy;opyleft 2026 star morin
+            </footer>
+        </aside>
+
+        <main id="viewport-container">
+            <canvas id="viewport"></canvas>
+            <div id="zoom-controls">
+                <button id="btn-zoom-in">+</button>
+                <button id="btn-zoom-out">-</button>
+                <button id="btn-zoom-reset">1:1</button>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
