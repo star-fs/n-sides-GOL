@@ -4,6 +4,9 @@ A high-performance, multi-geometry cellular automata simulator built with HTML5 
 
 Unlike standard Game of Life implementations restricted to 2D square grids, **n-sides-GOL** allows cellular automata to evolve across diverse regular tessellations (Square, Hexagonal, Triangular, Diamond) as well as non-periodic, **aperiodic "Hat" monotile (Einstein Tile)** universes.
 
+## Play Live
+https://star-fs.github.io/n-sides-GOL/
+
 ---
 
 ## ✨ Key Features & Differentiation
