@@ -1,4 +1,5 @@
 # n-sides-GOL: Multi-Tiling Game of Life
+![App Screenshot](<Screenshot from 2026-07-27 22-05-35.png>)
 
 A high-performance, multi-geometry cellular automata simulator built with HTML5 Canvas, Web Workers, and `SharedArrayBuffer`. 
 
